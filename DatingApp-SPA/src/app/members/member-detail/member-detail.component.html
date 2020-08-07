@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="card">
+        <img class="card-img-top img-thumbnail" src="{{user?.photoUrl}}" alt="{{user.knowAs}}">
+        <div class="body">
+          <div>
+            <strong>Location</strong>
+            <p>{{user?.city}}, {{user?.country}}</p>
+          </div>
+            <strong>Age:</strong>
+            <p>{{user.age}}</p>
+          </div>
+            <strong>Last Active:</strong>
+            <p>{{user.lastActive}}</p>
+          </div>
+            <strong>Member Sicne:</strong>
+            <p>{{user.created}}</p>
+          </div>
+      </div>
+      <div class="card-footer">
+        <div class="btn-group d-flex">
+          <button class="btn btn-primary w-200">Like</button>
+          <button class="btn btn-success w-200">Message</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <div class="tab-panel">
+        <tab heading="About {{user?.knowAs}}">
+          <h4>Description</h4>
+          <p>{{user?.introduction}}</p>
+          <h4>Looking For</h4>
+          <p>{{user?.lookingFor}}</p>
+        </tab>
+      </div>
+

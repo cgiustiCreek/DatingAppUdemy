@@ -5,15 +5,15 @@ using DatingApp.API.Models;
 using DatingApp.API.Dtos;
 using System.Security.Claims;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.IdentityModel.Tokens;
 using Microsoft.Extensions.Configuration;
 using System.Text;
 using System;
 using System.IdentityModel.Tokens.Jwt;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DatingApp.API.Controllers
 {
-
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class AuthController : ControllerBase
@@ -27,8 +27,8 @@ namespace DatingApp.API.Controllers
             this.repository = repository;
         }
 
+        [AllowAnonymous]
         [HttpPost("register")]
-
         public async Task<ActionResult> Register(UserForRegisterDto userForRegisterDto)
         {
             // Validate values
@@ -44,8 +44,8 @@ namespace DatingApp.API.Controllers
             return StatusCode(201);
         }
 
+        [AllowAnonymous]
         [HttpPost("login")]
-
         public async Task<ActionResult> Login(UserForLoginDto userForLoginDto)
         {
             var userFromRepo = await repository.Login(userForLoginDto.Username, userForLoginDto.Password);
