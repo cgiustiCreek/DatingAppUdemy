@@ -4,10 +4,11 @@ import { UserService } from 'src/app/_Services/User.service';
 import { AlertifyService } from 'src/app/_Services/alertify.service';
 import { ActivatedRoute } from '@angular/router';
 
+
 @Component({
   selector: 'app-member-detail',
   templateUrl: './member-detail.component.html',
-  styleUrls: ['./member-detail.component.css']
+  styleUrls: ['./member-detail.component.css'],
 })
 export class MemberDetailComponent implements OnInit {
   user: User;
